@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Open Cart Test Regression PW Suite" thread-count="5" parallel="tests" verbose="4">
+
+<!-- Listener tag for Extent Reports to be added. It will generate the report when we run this xml file-->
+	<listeners>
+		<listener 
+		class-name="com.qa.opencart.listeners.ExtentReportListener">
+		</listener>		
+	</listeners>
+
+
+	<test name="Open Cart Home Page Test with chrome">
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="com.qa.opencart.tests.HomePageTest" />
+		</classes>
+	</test>
+	
+		<test name="Open Cart Login Page Test with firefox">
+			<parameter name="browser" value="firefox"></parameter>
+		<classes>
+			<class name="com.qa.opencart.tests.LoginPageTest" />
+		</classes>
+	</test>
+	
+	
+	<!-- again for a differnet browser-->
+		<test name="Open Cart Home Page Test with chromium">
+			<parameter name="browser" value="chromium"></parameter>
+		<classes>
+			<class name="com.qa.opencart.tests.HomePageTest" />
+		</classes>
+	</test>
+	
+		<test name="Open Cart Login Page Test with safari">
+			<parameter name="browser" value="safari"></parameter>
+		<classes>
+			<class name="com.qa.opencart.tests.LoginPageTest" />
+		</classes>
+	</test>
+	
+</suite>
